@@ -1,0 +1,37 @@
+##服务器端口
+server:
+  port: 7777
+
+##数据库配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/qy_blog?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: zhaozonghao168
+
+##servlet 文件删除
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 5MB
+
+##mybatisPlus配置
+mybatis-plus:
+  configuration:
+    #日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #测试可以打印mybatisplus相关的日志信息
+  global-config:
+    db-config:      #配置逻辑删除的字段
+      logic-delete-field: delFlag
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      id-type: auto
+
+oss:
+  accessKey : GgU8DdgzCBEK7MjbA-fl-aRcIlOlnWhFh_p6LvbD
+  secretKey : HWp7XB9-BbDBSBYFQ5T3k5sTXHk0fGZJZOFt_Bma
+  bucket : qy-blog11-1
+
+
+
